@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Couchbase LINQ Example</h1>
+    <p class="lead">A simple example covering the use of Couchbase and the Linq2Couchbase LINQ provider.</p>
+    <p><a href="http://github.com/couchbaselabs/Linq2Couchbase" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Querying with LINQ</h2>
+        <ul>
+            <li>@Html.ActionLink("Basic Query", "Basic", new {controller = "Query"})</li>
+            <li>@Html.ActionLink("Advanced Query", "Advanced", new { controller = "Query" })</li>
+            <li>@Html.ActionLink("Join", "Join", new { controller = "Query" })</li>
+            <li>@Html.ActionLink("Unnest", "Unnest", new { controller = "Query" })</li>
+        </ul>
+
+        <h2>Advanced LINQ Features for Couchbase</h2>
+        <ul>
+            <li>@Html.ActionLink("Is Missing", "IsMissing", new { controller = "AdvancedFeatures" })</li>
+            <li>@Html.ActionLink("Use Keys", "UseKeys", new {controller = "AdvancedFeatures"})</li>
+            <li>@Html.ActionLink("Async Queries", "Async", new {controller = "AdvancedFeatures"})</li>
+            <li>@Html.ActionLink("Async Aggregate Queries", "AsyncAggregate", new {controller = "AdvancedFeatures"})</li>
+            <li>@Html.ActionLink("Use Index", "UseIndex", new {controller = "AdvancedFeatures"})</li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Change Tracking</h2>
+        <ul>
+            <li>@Html.ActionLink("Airlines", "Index", new { controller = "ChangeTracking" })</li>
+        </ul>
+    </div>
+</div>

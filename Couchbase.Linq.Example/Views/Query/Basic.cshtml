@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Couchbase.Linq.Example.Documents.Airline>
+@{
+    ViewBag.Title = "Basic Query";
+}
+<h2>@ViewBag.Title.</h2>
+
+<ul>
+    @foreach (var airline in Model)
+    {
+        <li>@airline.Name (@airline.Callsign)</li>
+    }
+</ul>
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

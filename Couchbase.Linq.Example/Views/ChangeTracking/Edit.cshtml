@@ -1,0 +1,30 @@
+﻿@model Couchbase.Linq.Example.Models.AirlineModel
+@{
+    ViewBag.Title = $"Change Tracking - Edit {Model.Name}";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm())
+{
+<table class="input">
+    <tr>
+        <td>@Html.LabelFor(m => m.Name)</td>
+        <td>@Html.EditorFor(m => m.Name)</td>
+        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Callsign)</td>
+        <td>@Html.EditorFor(m => m.Callsign)</td>
+        <td>@Html.ValidationMessageFor(m => m.Callsign)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Save" /></td>
+        <td></td>
+    </tr>
+</table>
+}
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

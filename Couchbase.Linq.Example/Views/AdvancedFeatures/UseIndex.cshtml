@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Couchbase.Linq.Example.Documents.Route>
+@{
+    ViewBag.Title = "Use Index";
+}
+<h2>@ViewBag.Title.</h2>
+
+<ul>
+    @foreach (var route in Model)
+    {
+        <li>@route.SourceAirport -> @route.DestinationAirport (@route.Airline)</li>
+    }
+</ul>
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

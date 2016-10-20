@@ -1,0 +1,11 @@
+﻿@model Double
+@{
+    ViewBag.Title = "Async Aggregate Query";
+}
+<h2>@ViewBag.Title.</h2>
+
+<p>The average route distance is @(Model).</p>
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

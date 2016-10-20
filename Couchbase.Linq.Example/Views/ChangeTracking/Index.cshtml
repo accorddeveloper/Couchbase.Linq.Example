@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Couchbase.Linq.Example.Documents.Airline>
+@{
+    ViewBag.Title = "Change Tracking - Airlines";
+}
+<h2>@ViewBag.Title.</h2>
+
+<p>@Html.ActionLink("Create Airline", "Create")</p>
+
+<table class="grid">
+    @foreach (var airline in Model)
+    {
+        <tr>
+            <td>@airline.Name (@airline.Callsign)</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = airline.Id })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = airline.Id })</td>
+        </tr>
+    }
+</table>
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

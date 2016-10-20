@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Couchbase.Linq.Example.Models.RouteModel>
+@{
+    ViewBag.Title = "Join";
+}
+<h2>@ViewBag.Title.</h2>
+
+@foreach (var route in Model)
+{
+    <h3>@route.AirlineName (@route.Stops Stops)</h3>
+
+    <ul>
+        @foreach (var schedule in route.Schedule.OrderBy(p => p.Day).ThenBy(p => p.UTC))
+        {
+            <li>@((DayOfWeek)schedule.Day) @(DateTime.MinValue.Add(schedule.UTC).ToShortTimeString())</li>
+        }
+    </ul>
+}
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>

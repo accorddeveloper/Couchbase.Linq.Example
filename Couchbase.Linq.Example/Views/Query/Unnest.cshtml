@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Couchbase.Linq.Example.Models.UnnestedScheduleModel>
+@{
+    ViewBag.Title = "Unnest";
+}
+<h2>@ViewBag.Title.</h2>
+
+<ul>
+    @foreach (var schedule in Model)
+    {
+        <li><strong>Airline:</strong> @schedule.Airline <strong>Day/Time:</strong> @((DayOfWeek)schedule.Day) @(DateTime.MinValue.Add(schedule.UTC).ToShortTimeString())</li>
+    }
+</ul>
+
+<code>
+    @Couchbase.Linq.Example.Logging.RequestQueryAppender.GetLastQuery(Context)
+</code>
